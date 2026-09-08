@@ -1,6 +1,7 @@
 # Fields2Cover ROS2 RViz 可视化
 
 本项目用于将 [Fields2Cover](https://github.com/Fields2Cover/Fields2Cover) 路径规划结果通过 ROS2 和 RViz2 进行可视化。
+![RViz2 可视化效果](Rviz2.png)
 
 ## 1. 环境要求
 
