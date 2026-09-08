@@ -62,5 +62,3 @@ __pycache__/
 _skbuild/
 .venv/
 
-# other package
-src/rviz_satellite/
