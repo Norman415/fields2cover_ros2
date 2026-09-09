@@ -1,11 +1,9 @@
-# Fields2Cover ROS2 RViz 可视化
+# Fields2Cover ROS2 RViz Visualizer
 
-本项目用于将 [Fields2Cover](https://github.com/Fields2Cover/Fields2Cover) 路径规划结果通过 ROS2 和 RViz2 进行可视化。
+This programme uses [Fields2Cover](https://github.com/Fields2Cover/Fields2Cover) to solve and visualize the field coverage problem
 ![RViz2 可视化效果](Rviz2.png)
 
-## 1. 环境要求
-
-推荐环境：
+## 1. environment
 
 - Ubuntu 20.04
 - ROS2 Foxy
@@ -13,32 +11,28 @@
 - RViz2
 - Fields2Cover
 
-如果使用其他 ROS2 版本，请根据实际环境调整依赖包或者CmakeList.txt。
+if use other ubunut and ROS2 version ，please check or adapt the CmakeList.txt and F2CUtils.cmake's ubunut version or other settings.
 
 ---
 
-## 2. 安装 rviz_satellite
+## 2. install rviz_satellite 
 
-本项目的 RViz 可视化界面使用 `rviz_satellite` 显示卫星地图。
-
-首先安装相关依赖：
-
-cd ~/ros2_ws/src
-
+this programme display map by `rviz_satellite`.
+if there is no satellite module, install as below：
+```bash
+ros2 run fields2cover_ros visualizer_node
+cd ~/_ws/src
 git clone https://github.com/nobleo/rviz_satellite.git
-
-cd ~/ros2_ws
-
+cd ~/_ws
 rosdep install --from-paths src --ignore-src -r -y
-
 colcon build --symlink-install --packages-select rviz_satellite
 
 
-## 3. 运行
+## 3. run
 source /opt/ros/foxy/setup.zsh
 source install/setup.zsh
 ros2 run fields2cover_ros visualizer_node
 
-## 4.可视化
+## 4. rviz2 visualization
 source install/setup.zsh
 ros2 launch fields2cover_ros view_field.launch
